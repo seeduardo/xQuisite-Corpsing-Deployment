@@ -15,10 +15,10 @@ class Api::V1::LaterLinesController < ApplicationController
   end
 
   def create
-    first_line = FirstLine.find(@later_line.first_line_id)
     @later_line = LaterLine.new(later_line_params)
     if @later_line.save
       render json: @later_line
+      first_line = FirstLine.find(@later_line.first_line_id)
       if first_line.later_lines.length == 9
         lines_with_email = first_line.later_lines.select do |later_line|
           later_line.email
@@ -35,7 +35,7 @@ class Api::V1::LaterLinesController < ApplicationController
   private
 
   def later_line_params
-    params.require(:later_line).permit(:text, :author, :email, :line_number, :first_line_id)
+    params.require(:later_line).permit(:text, :author, :email, :first_line_id)
   end
 
 end

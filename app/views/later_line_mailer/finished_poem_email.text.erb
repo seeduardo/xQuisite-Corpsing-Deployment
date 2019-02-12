@@ -2,7 +2,7 @@ Greetings once again, oh valiant <%= @current_line.author %>.
 =============================================================
 
     Your fellow x-Quisite Corpseers out there in the wide world have finally congregated in such number and fashion as to produce the following outstanding collaborative work of art:
-    <%= @first_line %>
+    <%= @first_line.text %>
     <% @first_line.later_lines.map do |later_line|%>
     <%= later_line.text %>
     <% end %>

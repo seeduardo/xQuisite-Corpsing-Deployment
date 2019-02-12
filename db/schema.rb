@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_07_152402) do
+ActiveRecord::Schema.define(version: 2019_02_12_135241) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,10 +25,7 @@ ActiveRecord::Schema.define(version: 2019_02_07_152402) do
     t.string "text"
     t.string "author"
     t.string "email"
-    t.integer "line_number"
     t.bigint "first_line_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["first_line_id"], name: "index_later_lines_on_first_line_id"
   end
 

@@ -4,6 +4,27 @@ Rails.application.configure do
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
+
+  config.action_mailer.delivery_method = :smtp
+  # Defaults to:
+  # config.action_mailer.sendmail_settings = {
+  #   location: '/usr/sbin/sendmail',
+  #   arguments: '-i'
+  # }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_options = {from: 'xquisitecorpsing@gmail.com'}
+  config.action_mailer.default_url_options = { host: 'localhost:3000'}
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address:              'smtp.gmail.com',
+  port:                 587,
+  user_name:            'xquisitecorpsing',
+  password:             'xQu1s1teCorps1ng',
+  authentication:       :plain,
+  enable_starttls_auto: true  }
+
   config.cache_classes = false
 
   # Do not eager load code on boot.
@@ -52,24 +73,5 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_mailer.delivery_method = :sendmail
-  # Defaults to:
-  # config.action_mailer.sendmail_settings = {
-  #   location: '/usr/sbin/sendmail',
-  #   arguments: '-i'
-  # }
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_options = {from: 'xQuisiteCorpsing@gmail.com'}
-
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-  address:              'smtp.gmail.com',
-  port:                 587,
-  domain:               'example.com',
-  user_name:            'xQuisiteCorpsing',
-  password:             'xQu1s1teCorps1ng',
-  authentication:       'plain',
-  enable_starttls_auto: true  }
 
 end

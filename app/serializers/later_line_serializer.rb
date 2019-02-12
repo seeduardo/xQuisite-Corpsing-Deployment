@@ -1,3 +1,3 @@
 class LaterLineSerializer < ActiveModel::Serializer
-  attributes :id, :text, :author, :email, :line_number, :first_line_id
+  attributes :id, :text, :author, :email, :first_line_id
 end
