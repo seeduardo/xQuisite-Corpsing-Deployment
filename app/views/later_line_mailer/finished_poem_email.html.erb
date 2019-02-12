@@ -1,0 +1,14 @@
+<h1>Greetings once again, oh valiant <%= @current_line.author %></h1>.
+  <p>
+    Your fellow x-Quisite Corpseers out there in the wide world have finally congregated in such number and fashion as to produce the following outstanding collaborative work of art:<br>
+    <%= @first_line %><br>
+    <% @first_line.later_lines.map do |later_line|%>
+    <%= later_line.text %><br>
+    <% end %>
+    The first line of this creation was evoked from the mystery of the ether, but the remaining lines were forged by the following x-Quisite Corpseers respectively:
+    <% @first_line.later_lines.map do |later_line|%>
+    <%= later_line.author %><br>
+    <% end %>
+    If you're in an astute frame of mind today, <%= @current_line.author %>, you'll no doubt spot your name in this illustrious list of contributors, as well as your own proffered line of poetry: "<%= @current_line.text %>". What do you think, does it fit the overall flow of the x-Quisite Corpse? If not, then please do feel free to navigate back to x-Quisite Corpsing for another try.
+  </p>
+<p>May the rest of your day be no less superlative than the rest of your life - that is it, should you deserve so.</p>
