@@ -15,9 +15,18 @@ class Api::V1::LaterLinesController < ApplicationController
   end
 
   def create
+    first_line = FirstLine.find(@later_line.first_line_id)
     @later_line = LaterLine.new(later_line_params)
     if @later_line.save
       render json: @later_line
+      if first_line.later_lines.length == 9
+        lines_with_email = first_line.later_lines.select do |later_line|
+          later_line.email
+        end
+        lines_with_email.each do |current_line|
+          LaterLineMailer.finished_poem_email(first_line, current_line).deliver_now
+        end
+      end
     else
       render json: {error: 'The poetic voice cracked, and this line could not be added....'}, status: 400
     end

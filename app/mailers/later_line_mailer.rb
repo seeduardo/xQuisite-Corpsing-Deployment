@@ -1,0 +1,2 @@
+class LaterLineMailer < ApplicationMailer
+end
