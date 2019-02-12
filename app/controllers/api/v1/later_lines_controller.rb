@@ -1,8 +1,8 @@
 class Api::V1::LaterLinesController < ApplicationController
 
   def index
-    @later_lines = LaterLine.all
-    render json: @later_lines
+    @all_lines = FirstLine.all
+    render json: @all_lines
   end
 
   def show
@@ -26,7 +26,7 @@ class Api::V1::LaterLinesController < ApplicationController
   private
 
   def later_line_params
-    params.require(:later_line).permit(:text, :author, :line_number, :first_line_id)
+    params.require(:later_line).permit(:text, :author, :email, :line_number, :first_line_id)
   end
 
 end
