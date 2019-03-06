@@ -1,0 +1,12 @@
+{
+  "name": "test-rails",
+  "engines": {
+    "node": "8.12.0",
+    "yarn": "1.12.3"
+  },
+  "scripts": {
+    "build": "yarn --cwd xQuisite-Corpsing-Client/x-quisite-corpse-test install && yarn --cwd xQuisite-Corpsing-Client/x-quisite-corpse-test build",
+    "deploy": "cp -a xQuisite-Corpsing-Client/x-quisite-corpse-test/build/. public/",
+    "heroku-postbuild": "yarn build && yarn deploy"
+  }
+}
