@@ -1,2 +1,2 @@
-frontend: PORT=3001 yarn --cwd xQuisite-Corpsing-Client/x-quisite-corpse-test start
+frontend: PORT=3001 yarn --cwd Client/x-quisite-corpse-test start
 backend: PORT=3000 bundle exec rails s

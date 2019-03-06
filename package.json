@@ -6,8 +6,8 @@
     "yarn": "1.12.3"
   },
   "scripts": {
-    "build": "yarn --cwd xQuisite-Corpsing-Client/x-quisite-corpse-test install && yarn --cwd xQuisite-Corpsing-Client/x-quisite-corpse-test build",
-    "deploy": "cp -a xQuisite-Corpsing-Client/x-quisite-corpse-test/build/. public/",
+    "build": "yarn --cwd Client/x-quisite-corpse-test install && yarn --cwd Client/x-quisite-corpse-test build",
+    "deploy": "cp -a Client/x-quisite-corpse-test/build/. public/",
     "heroku-postbuild": "yarn build && yarn deploy"
   }
 }
